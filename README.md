@@ -2,7 +2,7 @@
 
 A classic, nostalgic, and engaging "Dots and Boxes" game developed exclusively for the **Delta Chat** messenger platform as a **Webxdc** application. This project is built with a strong focus on smooth user experience, flawless network synchronization in online mode, and a lightweight zero-dependency architecture.
 
-(README-fa.md): https://github.com/MesterMiM/delta-dots-boxes/blob/main/README-fa.md
+[🇮🇷 برای مطالعه نسخه فارسی کلیک کنید](README-fa.md)
 ---
 
 ## ✨ Key Features
@@ -61,3 +61,6 @@ To run this game in Delta Chat:
 ---
 *Developed with ❤️ for the Delta Chat community.*
 
+## 📸 Screenshots
+![Game Screen 1](screenshot1.jpg)
+![Game Screen 2](screenshot2.jpg)
