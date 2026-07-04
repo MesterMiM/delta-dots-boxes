@@ -1,0 +1,99 @@
+* { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+body { 
+    background-color: #f4f4f9; color: #333; 
+    font-family: system-ui, -apple-system, sans-serif;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    height: 100vh; overflow: hidden; touch-action: none;
+}
+
+/* Welcome Screen */
+#welcome-screen { text-align: center; }
+#welcome-screen h1 { font-size: 24px; margin-bottom: 10px; color: #2c3e50; }
+#welcome-screen button {
+    display: block; width: 220px; padding: 15px; margin: 10px auto;
+    font-size: 16px; border-radius: 8px; border: none;
+    background: #3498db; color: white; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+#welcome-screen button:nth-child(4) { background: #e74c3c; }
+
+/* Game Screen */
+#game-screen { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; }
+#header { width: 100%; padding: 10px; text-align: center; font-size: 14px; font-weight: bold; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); z-index: 10; }
+#score-text { color: #2c3e50; }
+
+/* Board */
+#game-board { position: relative; flex-grow: 1; width: 100%; display: flex; align-items: center; justify-content: center; }
+.dot { position: absolute; background: #34495e; border-radius: 50%; }
+.line { position: absolute; background: #bdc3c7; border-radius: 4px; cursor: pointer; }
+.line.active-1 { background: #e74c3c; } /* Player 1 / Human */
+.line.active-2 { background: #3498db; } /* Player 2 / Bot */
+.box { position: absolute; transition: background 0.3s; border-radius: 2px; }
+.box.p1 { background: rgba(231, 76, 60, 0.5); }
+.box.p2 { background: rgba(52, 152, 219, 0.5); }
+
+/* Controls */
+#controls { width: 100%; padding: 10px; display: flex; justify-content: center; gap: 10px; background: #fff; z-index: 10; }
+#controls button {
+    padding: 8px 16px; font-size: 12px; border-radius: 6px; border: none;
+    background: #2ecc71; color: white; cursor: pointer;
+}
+#btn-reset { background: #95a5a6; }
+
+/* Animations */
+@keyframes goldFlash {
+    0% { background-color: #f1c40f; box-shadow: 0 0 15px #f1c40f; }
+    100% { background-color: transparent; box-shadow: none; }
+}
+.flash { animation: goldFlash 0.5s ease-out; }
+
+/* استایل مربوط به پیام موقت (Toast) */
+#toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: rgba(50, 50, 50, 0.9);
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, bottom 0.5s ease-in-out;
+    font-family: inherit;
+    font-size: 16px;
+    direction: rtl;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+}
+
+/* کلاسی که جاوااسکریپت برای نمایش پیام اضافه می‌کند */
+#toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px; /* برای ایجاد افکت حرکت ملایم به سمت بالا */
+}
+
+#muteBtn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+    transition: background 0.3s;
+}
+#muteBtn:active {
+    background: rgba(0, 0, 0, 0.9);
+}

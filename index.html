@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dots and Boxes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- صفحه شروع بازی -->
+    <div id="welcome-screen">
+        <h1 id="welcome-title">Dots and Boxes</h1>
+        <p id="welcome-subtitle">Choose game mode</p>
+                <button id="btn-bot" onclick="startGame('bot')">🤖 Play with Bot</button>
+  	        <button id="btn-local" onclick="startGame('local')">📱 Local (1 Phone)</button>
+     	        <button id="btn-pvp" onclick="startGame('pvp')">🌐 Chat Multiplayer</button>
+
+    </div>
+
+    <!-- محیط اصلی بازی -->
+    <div id="game-screen" style="display: none;">
+        <div id="header">
+            <span id="score-text">Player 1: 0 | Player 2: 0</span>
+        </div>
+        
+        <div id="game-board"></div>
+        
+        <div id="controls">
+            <button id="btn-next" onclick="nextRound()">Next Round</button>
+            <button id="btn-reset" onclick="requestReset()">Reset Game (0/2)</button>
+        </div>
+    </div>
+
+    <script src="webxdc.js"></script>
+    <script src="app.js"></script>
+<button id="muteBtn" onclick="toggleMute()">🔊</button>
+
+</body>
+</html>
